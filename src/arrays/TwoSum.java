@@ -1,8 +1,9 @@
-package Arrays;
+package arrays;
 
 import java.util.HashMap;
 
 //Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
 public class TwoSum {
     public static void main(String[] args) {
         int[] nums = {2,11,7,15};
