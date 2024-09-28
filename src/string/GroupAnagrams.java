@@ -7,7 +7,6 @@ public class GroupAnagrams {
         String [] str = {"eat","tea","tan","ate","nat","bat"};
 
         List<List<String>> arr = groupAnagrams(str);
-
         System.out.println(arr.toString());
     }
 
