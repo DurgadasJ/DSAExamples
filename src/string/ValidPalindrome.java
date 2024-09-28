@@ -1,4 +1,4 @@
-package recursion;
+package string;
 
 //https://leetcode.com/problems/valid-palindrome/description/
 public class ValidPalindrome {
