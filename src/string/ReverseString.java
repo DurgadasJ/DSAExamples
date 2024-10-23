@@ -6,8 +6,10 @@ public class ReverseString {
         String str = "Welcome to Intellij IDEA";
 
         String str1 = reverseStringWordWise(str);
-
         System.out.println(str1);
+
+        String str2 = "DataEngineering";
+        reverseString2(str2);
 
     }
     static String reverseStringWordWise(String input) {
@@ -21,4 +23,26 @@ public class ReverseString {
         }
         return str1;
     }
+
+    static void reverseString2(String str1){
+        char[] arr = str1.toCharArray();
+
+        int left=0,right = str1.length()-1;
+
+        while(left<right){
+            char tmp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = tmp;
+            left++;
+            right--;
+        }
+        StringBuilder str = new StringBuilder();
+
+        for(char s: arr){
+            str.append(s);
+        }
+        System.out.println(str);
+    }
+
+
 }
