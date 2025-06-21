@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class CharacterCount {
     public static void main(String[] args) {
-        String str = "Welcome to Intellij Ideaa";
-        str.toLowerCase();
+        String str1 = "Welcome to Intellij Ideaa";
+        String str = str1.toLowerCase();
 
         HashMap<Character,Integer> map = new HashMap<>();
 
