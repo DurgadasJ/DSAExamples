@@ -10,6 +10,7 @@ public class ReverseString {
 
         String str2 = "DataEngineering";
         reverseString2(str2);
+        reverseString3(str2);
 
     }
     static String reverseStringWordWise(String input) {
@@ -40,6 +41,14 @@ public class ReverseString {
 
         for(char s: arr){
             str.append(s);
+        }
+        System.out.println(str);
+    }
+    static void reverseString3(String str1){
+        String str = "";
+
+        for(int i=str1.length()-1;i>=0;i--){
+            str += str1.charAt(i);
         }
         System.out.println(str);
     }
