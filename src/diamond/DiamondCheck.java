@@ -3,7 +3,7 @@ package diamond;
 public class DiamondCheck implements Ainterface,Binterface{
     @Override
     public void methodDiamond() {
-        Ainterface.super.methodDiamond();
+        Binterface.super.methodDiamond();
     }
 
     public static void main(String[] args) {
