@@ -20,6 +20,7 @@ public class KtheLargestEle {
                 minHeap.poll();
             }
         }
+        System.out.println(minHeap.toString());
 
         return minHeap.peek();
     }
