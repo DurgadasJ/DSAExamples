@@ -3,7 +3,7 @@ package misc;
 public class StarCounter {
     public static void main(String[] args) {
         int n = 5;
-
+        //1 3 5 7 9 11 13
         for (int i = 0; i < n; i++) {
             for (int j = n - i; j > 1; j--) {
                 System.out.print("  ");
