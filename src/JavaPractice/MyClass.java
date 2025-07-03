@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.function.Predicate;
 
 public class MyClass implements Runnable, Predicate, Callable {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws ExceptionCls {
 
         String str = "My Java";
         String str1 = new String("My Java");
@@ -18,6 +18,17 @@ public class MyClass implements Runnable, Predicate, Callable {
         myjc.display();
         myjc.default_1method();
         MyInterface.static_1method();
+
+        try{
+            int t =0;
+            int b = 4/t;
+        }catch (ArithmeticException  e){
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+
+        }
+
+        System.out.println("After exception code");
+
 //
 //        System.out.println("Saurabh Joshi");
 //
