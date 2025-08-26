@@ -11,6 +11,11 @@ public class EvenOddPrinter {
 
         Thread oddThread = new Thread(() -> printer.printOdd(), "OddThread");
         Thread evenThread = new Thread(() -> printer.printEven(), "EvenThread");
+        //which method is called here thread or runnable??
+        //Runnable is a functional interface with a single method run().
+        // When you create a thread and pass a lambda expression or method reference, you're providing an implementation of the
+        // Runnable interface.
+        // The Thread class then uses this implementation to execute the code in a separate thread of execution.
 
         oddThread.start();
         evenThread.start();

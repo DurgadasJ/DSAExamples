@@ -10,8 +10,17 @@ public class MyClass implements Runnable, Predicate, Callable {
 
         String str = "My Java";
         String str1 = new String("My Java");
+        //Can we override string class
+        //No, because string class is final class
+        // == operator checks reference
+        // .equals() method checks content
+        // here str and str1 are two different objects in heap memory
+        // so reference will be different
 
-        boolean a = str.equals(str1);
+        boolean a = str.equals(str1); // true, because content is same
+        // can we overid .equals method and how
+        // Yes, by creating our own class and overriding .equals method
+        // but we cannot override .equals method of String class because String class is final class
         System.out.println(a);
 
         MyJavaClass myjc= new MyJavaClass();

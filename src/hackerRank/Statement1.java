@@ -6,6 +6,7 @@ import java.util.List;
 public class Statement1 {
     public static void main(String[] args) {
         List<Integer> cells = Arrays.asList(30,10,20);
+
         int minPowerRequired = minPower(cells);
         System.out.println("Min power :" + minPowerRequired);
 
