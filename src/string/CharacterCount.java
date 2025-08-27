@@ -22,5 +22,17 @@ public class CharacterCount {
         }
         System.out.println(map.toString());
         System.out.println(map);
+
+        Map<Character,Integer> map1 = new HashMap<>();
+
+        for(char ch : str.toCharArray()){
+            if(ch!=''){
+                map1.put(ch,map1.getOrDefault(ch,0)+1);
+            }
+        }
+
+        for(Entry<Character,Integer> entry: map1.entrySet()){
+            System.out.println(entry.getKey()+", "+entry.getValue());
+        }
     }
 }
