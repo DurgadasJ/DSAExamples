@@ -18,10 +18,13 @@ public class MakeUniqueArray {
         for (int num : arr) {
             set.add(num);
         }
-
+        // convert set to array
         int[] uniqueArray = set.stream().mapToInt(Integer::intValue).toArray();
+        int [] uniq = set.stream().mapToInt(Integer::intValue).toArray();
+        double [] uni1 = set.stream().mapToDouble(Integer::doubleValue).toArray();
         Integer[] uni2 = set.toArray(new Integer[0]);
-
+        System.out.println(Arrays.toString(uniq));
+        System.out.println(Arrays.toString(uni1));
         System.out.println(Arrays.toString(uni2));
         return uniqueArray;
     }
