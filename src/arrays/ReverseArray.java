@@ -5,18 +5,22 @@ import java.util.*;
 public class ReverseArray {
     public static void main(String[] args) {
         int [] arr = {1,2,3,5,4,6};
-        revArray(arr.clone());
+        int [] arr1 = revArray(arr.clone());
         revArray_2(arr.clone());
         revArray_List(arr);
 
     }
-    public static void revArray(int[] arr){
+
+    // Method 1 to reverse an array
+    public static int[] revArray(int[] arr){
         for(int i=0;i<arr.length/2;i++){
             int tmp = arr[arr.length-1-i];
             arr[arr.length-1-i] = arr[i];
             arr[i] = tmp;
         }
         System.out.println("rev 1: " +Arrays.toString(arr));
+
+        return arr;
     }
 
     public static void revArray_2(int[] arr) {
