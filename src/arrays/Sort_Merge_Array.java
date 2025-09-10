@@ -22,7 +22,8 @@ public class Sort_Merge_Array {
 
         int i=0,j=0,k=0;
 
-        while(i<n1 && j<n3){
+        // merge two sorted arrays
+        while(i<n1 && j<n3){ // Checks both arrays are not exhausted
             if(arr1[i]<arr2[j]){
                 merged[k++]=arr1[i++];
             }else{
