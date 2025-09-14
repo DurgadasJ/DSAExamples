@@ -22,11 +22,14 @@ public class EmployeeStreams {
         // Example: Get a list of employee sorted by age
         employees.stream().sorted(Comparator.comparing(Employee::getAge)).forEach(System.out::println);
 
-        // Example: Get a set of departments
-        employees.stream().collect(Collectors.groupingBy(Employee::getDept,Collectors.maxBy(Comparator.comparing(Employee::getSalary))))
+        // Example: Get a set of highest salary per departments
+        employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDept,Collectors.maxBy(Comparator.comparing(Employee::getSalary))
+                        ))
                 .forEach((k,v)-> System.out.println(k + " : " + v.get()));
 
-        //list of employee reporting to same manager
+        // List of employee reporting to same manager
         Map<String,List<String>> map=employees.stream()
                 .collect(
                         Collectors.groupingBy(
@@ -34,17 +37,18 @@ public class EmployeeStreams {
                                         Employee::getName,
                                         Collectors.toList())));
         System.out.println(map.toString());
-        //only need to get name of employee who has manager david
+        // Only need to get name of employee who has manager david
         employees.stream().filter(e->e.getManager()=="David").map(Employee::getName).forEach(System.out::println);
 
-        //list of employees who are not managers
+        // List of employees who are not managers
         employees.stream().
                 filter(e->employees.stream().noneMatch(emp->emp.getManager().equals(e.getName())))
                 .forEach(System.out::println);
 
-        //is there other way to do this?
         //list of employees who are managers
-        //employees.stream().filter(e->employees.stream().anyMatch(emp->emp.getManager().equals(e.getName()))).forEach(System.out::println);
+        // employees.stream().
+        // filter(e->employees.stream()
+        // .anyMatch(emp->emp.getManager().equals(e.getName()))).forEach(System.out::println);
 
         System.out.println(employees.stream().mapToDouble(Employee::getSalary).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst());
 
