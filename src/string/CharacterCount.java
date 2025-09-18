@@ -2,6 +2,7 @@ package string;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CharacterCount {
     public static void main(String[] args) {
@@ -15,10 +16,10 @@ public class CharacterCount {
         // str1 will have the updated string now
         System.out.println(str1);
         System.out.println(str1.concat("!!!"));
-        //str1 will not change as concat also doesn't change the original string
+        // str1 will not change as concat also doesn't change the original string
         // we need to assign it to a new string or the same string variable
         // System.out.println(str1.concat("!!!")); this will print the output with !!!
-        HashMap<Character,Integer> map = new HashMap<>();
+        Map<Character,Integer> map = new ConcurrentHashMap<>();
 
         for(int i=0;i<str.length();i++){
             char ch = str.charAt(i);
