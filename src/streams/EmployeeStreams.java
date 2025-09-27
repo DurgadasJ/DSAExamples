@@ -1,9 +1,6 @@
 package streams;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EmployeeStreams {
@@ -23,11 +20,29 @@ public class EmployeeStreams {
         employees.stream().sorted(Comparator.comparing(Employee::getAge)).forEach(System.out::println);
 
         // Example: Get a set of highest salary per departments
-        employees.stream()
+       employees.stream()
                 .collect(Collectors.groupingBy(
                         Employee::getDept,Collectors.maxBy(Comparator.comparing(Employee::getSalary))
                         ))
                 .forEach((k,v)-> System.out.println(k + " : " + v.get()));
+
+
+       Map<String, Long> mapCount=employees.stream().collect(Collectors.groupingBy(Employee::getDept,
+               Collectors.counting()));
+
+        System.out.println(mapCount);
+        // Find the department with the highest in mapCount
+        String dept = mapCount.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+
+       // Count of employees in each department
+        String dept1 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDept,Collectors.counting()))
+                 .entrySet().stream().max(Map.Entry.comparingByValue()).toString();
+
+
 
         // List of employee reporting to same manager
         Map<String,List<String>> map=employees.stream()
@@ -52,5 +67,11 @@ public class EmployeeStreams {
 
         System.out.println(employees.stream().mapToDouble(Employee::getSalary).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst());
 
+        System.out.println(employees.stream().max(Comparator.comparing(Employee::getSalary))
+                .map(Employee::getName));
+
+        System.out.println(employees.stream().max(Comparator.comparing(Employee::getSalary))
+                .map(Employee::getName).toString());
     }
+
 }
