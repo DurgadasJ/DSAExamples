@@ -8,6 +8,11 @@ public class Query {
         String deptWiseCount = "select dept from department where dept_id in " +
                                "(select dept_id from employee group by dept_id having count(*)>5)";
 
+        String deptWiseCountByJoin = "select d.dept_name from department d " +
+                                    "join employee e on d.dept_id = e.dept_id " +
+                                    "group by d.dept_name having count(e.id) > 5";
+
+
         String deleteDuplEmail = "delete p1 from person p1 " +
                                  "join person p2 on p1.email = p2.email" +
                                  "where p1.id > p2.id";
