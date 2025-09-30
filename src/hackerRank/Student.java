@@ -74,7 +74,7 @@ public class Student {
         // now we can access the name field
         Student student = (Student) o;
 
-        return name.equals(student.name);
+        return Objects.equals(name,student.name);
     }
 
 
