@@ -22,7 +22,8 @@ public class WeatherDataStreams {
         Double d = tempRange(weatherDataList);
         List<String> locs = locationsWithinSpeedRange(weatherDataList,10.0,25.0);
     }
-    //calculate the sum of all temperature divided by the number of records.
+
+    // Calculate the sum of all temperature divided by the number of records.
     // Input List of WeatherData objects. Expected Output is AverageTemperature.
     public static Double calcAverageTemp(List<WeatherData> weatherData){
         Double avgTemp = weatherData.stream().mapToDouble(WeatherData::getTemperature).average().orElse(0.0);
@@ -30,36 +31,39 @@ public class WeatherDataStreams {
         return avgTemp;
     }
 
-    //calculate max temperature
+    // Calculate max temperature
     public static Double maxTemperatur(List<WeatherData> data){
         Double maxTemp=data.stream().mapToDouble(WeatherData::getTemperature).max().orElse(0.0);
         System.out.println(maxTemp);
         return maxTemp;
     }
 
-    //calculate min temperature
+    // Calculate min temperature
     public static Double minTemp(List<WeatherData> data){
         Double minTemp = data.stream().mapToDouble(WeatherData::getTemperature).min().orElse(0.0);
         System.out.println(minTemp);
         return minTemp;
     }
 
-    //location with highest humidity
+    // Location with Max humidity
     public static String maxHumidityLocation(List<WeatherData> data){
         String str = data.stream().max(Comparator.comparing(WeatherData::getHumidity)).map(WeatherData::getLocation).orElse("");
         System.out.println(str);
         return str;
     }
 
-    //Find all locations where the temperature is above a given threshold
+    // Find all locations where the temperature is above a given threshold
     public static List<String> locationAboveThreshold(List<WeatherData> data){
         Double threshold = 85.0;
         List<String> lst = data.stream().filter(e->e.getTemperature()>threshold).map(WeatherData::getLocation).collect(Collectors.toList());
+        // if i do data.stream().filter(e->e.getTemperature()>threshold).collect(Collectors.toList());
+        // then it will return List<WeatherData> objects
+
         System.out.println(lst.toString());
         return lst;
     }
 
-    //find most common weathercondition in dataset and return string
+    // Find most common weathercondition in dataset and return string
     public static String commonWeather(List<WeatherData> data){
         String str = data.stream().collect(Collectors.groupingBy(WeatherData::getWeatherCondition,Collectors.counting()))
                 .entrySet().stream()
