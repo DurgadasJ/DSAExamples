@@ -16,7 +16,7 @@ public class CharacterCount {
         // str1 will have the updated string now
         System.out.println(str1);
         System.out.println(str1.concat("!!!"));
-        // str1 will not change as concat also doesn't change the original string
+        //      str1 will not change as concat also doesn't change the original string
         // we need to assign it to a new string or the same string variable
         // System.out.println(str1.concat("!!!")); this will print the output with !!!
         Map<Character,Integer> map = new ConcurrentHashMap<>();
