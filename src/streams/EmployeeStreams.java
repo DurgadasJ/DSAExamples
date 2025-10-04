@@ -27,7 +27,7 @@ public class EmployeeStreams {
                 .forEach((k,v)-> System.out.println(k + " : " + v.get()));
 
 
-       Map<String, Long> mapCount=employees.stream().collect(Collectors.groupingBy(Employee::getDept,
+       Map<String, Long> mapCount= employees.stream().collect(Collectors.groupingBy(Employee::getDept,
                Collectors.counting()));
 
         System.out.println(mapCount);
@@ -41,8 +41,6 @@ public class EmployeeStreams {
         String dept1 = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getDept,Collectors.counting()))
                  .entrySet().stream().max(Map.Entry.comparingByValue()).toString();
-
-
 
         // List of employee reporting to same manager
         Map<String,List<String>> map=employees.stream()
