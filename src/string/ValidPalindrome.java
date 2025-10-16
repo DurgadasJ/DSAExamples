@@ -28,6 +28,7 @@ public class ValidPalindrome {
         if(ch>='a' && ch<='z'){
             return ch;
         }else{
+
             return (char)(ch - 'A' + 'a');
         }
     }
