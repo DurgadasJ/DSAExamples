@@ -10,6 +10,7 @@ public class Statement1 {
         int minPowerRequired = minPower(cells);
         System.out.println("Min power :" + minPowerRequired);
 
+
     }
 
     private static int minPower(List<Integer> cells) {
