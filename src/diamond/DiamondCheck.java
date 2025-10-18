@@ -7,6 +7,7 @@ public class DiamondCheck implements Ainterface,Binterface{
     }
 
     public static void main(String[] args) {
+
         DiamondCheck dc = new DiamondCheck();
         dc.methodDiamond();
     }
