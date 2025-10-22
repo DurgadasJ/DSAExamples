@@ -12,6 +12,7 @@ public class permutationParanthesis {
     }
 
     public static List<String> recurse(List<String> res, int left, int right, String s, int n) {
+
         if (s.length() == n * 2) {
             res.add(s);
             return res;
