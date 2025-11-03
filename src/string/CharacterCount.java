@@ -55,5 +55,19 @@ public class CharacterCount {
         for(Map.Entry<Character,Integer> entry: map1.entrySet()){
             System.out.println(entry.getKey()+", "+entry.getValue());
         }
+
+        String str4 = "UnionWest";
+
+        Map<Character,Integer> map2 = new HashMap<>();
+
+        for(char ch : str4.toCharArray()){
+            if(ch != ' '){
+                map2.put(ch,map2.getOrDefault(ch,0)+1);
+            }
+        }
+
+        for(Map.Entry<Character,Integer> entry:map2.entrySet()){
+            System.out.println(entry.getKey()+" : "+entry.getValue());
+        }
     }
 }
