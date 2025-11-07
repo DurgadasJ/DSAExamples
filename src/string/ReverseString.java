@@ -12,6 +12,17 @@ public class ReverseString {
         reverseString2(str2);
         reverseString3(str2);
 
+        //stringbuilder and stringbuffer
+        // stringbuilder is not synchronized and faster
+        // stringbuffer is synchronized and slower
+        // stringbuilder is used when we need to make changes to the string in a single thread
+        // stringbuffer is used when we need to make changes to the string in multiple threads
+        // stringbuilder is preferred over stringbuffer if thread safety is not a concern
+
+        // lambda expression is used to provide the implementation of a functional interface
+        // functional interface is an interface that has only one abstract method
+
+
     }
     static String reverseStringWordWise(String input) {
         String[] str = input.split(" ");

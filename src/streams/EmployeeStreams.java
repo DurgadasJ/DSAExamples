@@ -18,6 +18,21 @@ public class EmployeeStreams {
 
         // Example: Get a list of employee sorted by age
         employees.stream().sorted(Comparator.comparing(Employee::getAge)).forEach(System.out::println);
+        //Intermediate and terminal operations
+        // intermediate: filter, map, sorted, distinct, peek
+        // terminal: forEach, collect, reduce, count, anyMatch, allMatch, noneMatch, findFirst, findAny
+        // intermediate are lazy in nature
+        // terminal are eager in nature
+        // When terminal operation is invoked, all the intermediate operations are executed
+
+
+        // java 25 features
+        // has new features like stream().toList() instead of collect(Collectors.toList())
+        // but collect is more powerful as it can be used to collect in different data structures like Set, Map etc.
+        // collectors also provide various inbuilt collectors like groupingBy, partitioningBy, mapping, reducing etc.
+        // Collectors.groupingBy is used to group the elements based on a classifier function
+
+        //
 
         // Example: Get a set of highest salary per departments
        employees.stream()
