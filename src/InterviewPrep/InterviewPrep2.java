@@ -7,7 +7,7 @@ public class InterviewPrep2 {
     public static void main(String[] args) {
         List<Integer> lst = List.of(1,2,2,3,3,4,4,4,4);
 
-        // Below functional interfaces are used here
+        // Functional interfaces used here
         // Predicate, Function, Consumer
         // Predicate -> filter
         // Function -> groupingBy
