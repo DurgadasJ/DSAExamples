@@ -11,7 +11,8 @@ public class JavaPractice {
     public static void main(String[] args) {
         String str = "aaabbcdde";
 
-        Map<Character,Long> map = str.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c,LinkedHashMap::new,Collectors.counting()));
+        Map<Character,Long> map = str.chars().mapToObj(c->(char)c).
+                collect(Collectors.groupingBy(c->c,LinkedHashMap::new,Collectors.counting()));
 
         for(char ch: str.toCharArray()){
             if(map.get(ch)==1){
